@@ -1,1 +1,1 @@
-export const CHANGE_ACTIVE_ITEM : string = 'CHANGE_ACTIVE_ITEM'
+export const CHANGE_ACTIVE_ITEM: string = 'CHANGE_ACTIVE_ITEM';

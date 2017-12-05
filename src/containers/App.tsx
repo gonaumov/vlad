@@ -1,10 +1,10 @@
 import * as React from 'react';
 import '../App.css';
-import {Dispatch} from 'redux'
-import { getActiveItem } from '../reducers/'
-import { connect, Component } from 'react-redux'
-import {stateArg} from '../common/types'
-import * as types from '../constants/ActionTypes'
+import { Dispatch } from 'redux';
+import { getActiveItem } from '../reducers/';
+import { connect, Component } from 'react-redux';
+import { stateArg } from '../common/types';
+import * as types from '../constants/ActionTypes';
 
 const logo = require('../logo.svg');
 
@@ -31,20 +31,19 @@ class App extends React.Component<any, any> {
 
 const mapStateToProps = (state: stateArg) => ({
   activeItem: getActiveItem(state)
-})
+});
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => {
   return {
     onChangeItemClick: () => {
       dispatch({
         type: types.CHANGE_ACTIVE_ITEM
-      })
+      });
     }
-  }
-}
-
+  };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App as Component<any>)
+)(App as Component<any>);

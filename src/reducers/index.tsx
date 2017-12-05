@@ -1,8 +1,8 @@
 import {
     CHANGE_ACTIVE_ITEM
-} from '../constants/ActionTypes'
+} from '../constants/ActionTypes';
 
-import {stateArg} from '../common/types'
+import { stateArg } from '../common/types';
 
 const index = (state: stateArg, action = { type: '' }) => {
     switch (action.type) {
@@ -11,19 +11,19 @@ const index = (state: stateArg, action = { type: '' }) => {
                 return {
                     activeIndex: (state.activeIndex + 1),
                     items: [...state.items]
-                }
+                };
             }
             return {
                 activeIndex: 0,
                 items: [...state.items]
-            }
+            };
         default:
             return state;
     }
-}
+};
 
 export const getActiveItem = (state: stateArg) => {
-   return state.items[state.activeIndex]
-}
+   return state.items[state.activeIndex];
+};
 
-export default index
+export default index;
