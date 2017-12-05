@@ -11,7 +11,7 @@ const index = (state: stateArg, action = { type: '' }) => {
                     activeIndex: nextIndex,
                     items: [...state.items],
                     previousEnabled: true,
-                    nextEnabled: (state.items.length-1) > nextIndex
+                    nextEnabled: (state.items.length - 1) > nextIndex
                 };
             }
             return {

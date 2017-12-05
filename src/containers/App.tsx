@@ -7,7 +7,6 @@ import { stateArg } from '../common/types';
 import * as types from '../constants/ActionTypes';
 const logo = require('../vlad.png');
 
-
 class App extends React.Component<any, any> {
   render() {
     const { activeItem, onNextClick, onPreviousClick, nextDisabled, previousDisabled } = this.props;
