@@ -2,17 +2,9 @@ import {
     CHANGE_ACTIVE_ITEM
 } from '../constants/ActionTypes'
 
+import {stateArg} from '../common/types'
 
-const INITIAL_STATE = {
-    activeIndex: 0,
-    items: [1,2,3]
-}
-
-const index = (state =  INITIAL_STATE, action = { type: '' }) => {
-    if (!action) {
-        return state;
-    }
-
+const index = (state: stateArg, action = { type: '' }) => {
     switch (action.type) {
         case CHANGE_ACTIVE_ITEM:
             if (state.activeIndex < (state.items.length - 1)) {
@@ -28,6 +20,10 @@ const index = (state =  INITIAL_STATE, action = { type: '' }) => {
         default:
             return state;
     }
+}
+
+export const getActiveItem = (state: stateArg) => {
+   return state.items[state.activeIndex]
 }
 
 export default index
