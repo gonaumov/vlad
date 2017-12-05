@@ -4,6 +4,7 @@ import {Dispatch} from 'redux'
 import { getActiveItem } from '../reducers/'
 import { connect, Component } from 'react-redux'
 import {stateArg} from '../common/types'
+import * as types from '../constants/ActionTypes'
 
 const logo = require('../logo.svg');
 
@@ -36,7 +37,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>) => {
   return {
     onChangeItemClick: () => {
       dispatch({
-        type: 'CHANGE_ACTIVE_ITEM'
+        type: types.CHANGE_ACTIVE_ITEM
       })
     }
   }
