@@ -20,10 +20,13 @@ class App extends React.Component<any, any> {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+        When I start something I like to tell a story with it. 
+        Here I will tell a story about a famous man - Vlad drakula. 
+        You can go to next part when you click on the arrow. 
         <div>
           {activeItem}
         </div>
-        <input type="button" value="change" onClick={() => onChangeItemClick()} />
+        <input type="button" value="&#x21E8;" onClick={() => onChangeItemClick()} />
       </div>
     );
   }

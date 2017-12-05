@@ -10,7 +10,13 @@ import { stateArg } from './common/types';
 
 const INITIAL_STATE: stateArg = {
   activeIndex: 0,
-  items: [ 1,2,3,4,5,6,7,8,9 ]
+  items: ["Vlad hated beggars and lazi mans.",
+    "One day Vlad announced that he  will give a great feast to all beggars and wanderers.",
+    "Every scum was gathered from all over the country.",
+    "They all received free food and alcohol drinks in a wooded house.",
+    "When they get drunk Vlad appears with his servants and asked them are they want never be poor. ",
+    "When they answered 'Yes master'! Vlad ordered all doors on house to be nailed and house to be set on fire.",
+    "No one survived."]
 };
 
 const store = createStore(
@@ -20,7 +26,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-  <App />
+    <App />
   </Provider>
   ,
   document.getElementById('root') as HTMLElement
