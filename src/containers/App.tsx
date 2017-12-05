@@ -5,8 +5,8 @@ import { getActiveItem } from '../reducers/';
 import { connect, Component } from 'react-redux';
 import { stateArg } from '../common/types';
 import * as types from '../constants/ActionTypes';
+const logo = require('../vlad.png');
 
-const logo = require('../logo.svg');
 
 class App extends React.Component<any, any> {
   render() {
@@ -15,7 +15,7 @@ class App extends React.Component<any, any> {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Vlad welcome to React</h2>
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.

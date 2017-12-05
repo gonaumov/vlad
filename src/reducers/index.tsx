@@ -25,14 +25,14 @@ const index = (state: stateArg, action = { type: '' }) => {
                 return {
                     activeIndex: nextIndex,
                     items: [...state.items],
-                    previousEnabled: (nextIndex != 0),
+                    previousEnabled: (nextIndex !== 0),
                     nextEnabled: (state.items.length) > nextIndex
                 };
             }
 
             return {
                 ...state,
-                previousEnabled: state.activeIndex != 0,
+                previousEnabled: state.activeIndex !== 0,
                 nextEnabled: state.items.length > state.activeIndex
             };
         default:

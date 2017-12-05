@@ -10,13 +10,13 @@ import { stateArg } from './common/types';
 
 const INITIAL_STATE: stateArg = {
   activeIndex: 0,
-  items: ["Vlad hated beggars and lazi mans.",
-    "One day Vlad announced that he  will give a great feast to all beggars and wanderers.",
-    "Every scum was gathered from all over the country.",
-    "They all received free food and alcohol drinks in a wooded house.",
-    "When they get drunk Vlad appears with his servants and asked them are they want never be poor. ",
-    "When they answered 'Yes master'! Vlad ordered all doors on house to be nailed and house to be set on fire.",
-    "No one survived."],
+  items: ['Vlad hated beggars and lazi man.',
+    'One day Vlad announced that he  will give a great feast to all beggars and wanderers.',
+    'Every scum was gathered from all over the country.',
+    'They all received free food and alcohol drinks in a wooded house.',
+    'When they get drunk Vlad appears with his servants and asked them do they want never be poor. ',
+    'When they answered \'Yes master\'! Vlad ordered all doors on house to be nailed and house to be set on fire.',
+    'No one survived.'],
   previousEnabled: false,
   nextEnabled: true  
 };
