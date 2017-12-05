@@ -16,7 +16,9 @@ const INITIAL_STATE: stateArg = {
     "They all received free food and alcohol drinks in a wooded house.",
     "When they get drunk Vlad appears with his servants and asked them are they want never be poor. ",
     "When they answered 'Yes master'! Vlad ordered all doors on house to be nailed and house to be set on fire.",
-    "No one survived."]
+    "No one survived."],
+  previousEnabled: false,
+  nextEnabled: true  
 };
 
 const store = createStore(

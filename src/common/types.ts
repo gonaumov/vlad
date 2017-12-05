@@ -1,4 +1,6 @@
 export interface stateArg {
     activeIndex: number,
-    items: Array<any>
+    items: Array<any>,
+    previousEnabled: boolean,
+    nextEnabled: boolean
 }

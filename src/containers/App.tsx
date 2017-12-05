@@ -10,7 +10,7 @@ const logo = require('../logo.svg');
 
 class App extends React.Component<any, any> {
   render() {
-    const { activeItem, onChangeItemClick } = this.props;
+    const { activeItem, onNextClick, onPreviousClick, nextDisabled, previousDisabled } = this.props;
     return (
       <div className="App">
         <div className="App-header">
@@ -28,21 +28,29 @@ class App extends React.Component<any, any> {
           {activeItem}
           <hr/>
         </div>
-        <input type="button" value="&#x21E8;" onClick={() => onChangeItemClick()} />
+        <input disabled={previousDisabled} type="button" value="&#x21E6;" onClick={() => onPreviousClick()} />
+        <input disabled={nextDisabled} type="button" value="&#x21E8;" onClick={() => onNextClick()} />
       </div>
     );
   }
 }
 
 const mapStateToProps = (state: stateArg) => ({
-  activeItem: getActiveItem(state)
+  activeItem: getActiveItem(state),
+  previousDisabled: !state.previousEnabled,
+  nextDisabled: !state.nextEnabled
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => {
   return {
-    onChangeItemClick: () => {
+    onNextClick: () => {
       dispatch({
-        type: types.CHANGE_ACTIVE_ITEM
+        type: types.NEXT_ITEM
+      });
+    },
+    onPreviousClick: () => {
+      dispatch({
+        type: types.PREVIOUS_ITEM
       });
     }
   };

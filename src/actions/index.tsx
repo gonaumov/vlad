@@ -3,7 +3,7 @@ import { Dispatch } from 'react-redux'
 
 const changeActiveItem = () => (dispatch: Dispatch<{ type: 'string' }>): void => {
     dispatch({
-        type: types.CHANGE_ACTIVE_ITEM
+        type: types.NEXT_ITEM
     })
 };
 

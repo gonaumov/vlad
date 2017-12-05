@@ -1,21 +1,39 @@
-import {
-    CHANGE_ACTIVE_ITEM
-} from '../constants/ActionTypes';
+import * as types from '../constants/ActionTypes';
 
 import { stateArg } from '../common/types';
 
 const index = (state: stateArg, action = { type: '' }) => {
     switch (action.type) {
-        case CHANGE_ACTIVE_ITEM:
+        case types.NEXT_ITEM:
             if (state.activeIndex < (state.items.length - 1)) {
+                let nextIndex = state.activeIndex + 1;
                 return {
-                    activeIndex: (state.activeIndex + 1),
-                    items: [...state.items]
+                    activeIndex: nextIndex,
+                    items: [...state.items],
+                    previousEnabled: true,
+                    nextEnabled: (state.items.length-1) > nextIndex
                 };
             }
             return {
-                activeIndex: 0,
-                items: [...state.items]
+                ...state,
+                previousEnabled: state.activeIndex > 0,
+                nextEnabled: (state.items.length - 1) > state.activeIndex
+            };
+        case types.PREVIOUS_ITEM:
+            if (state.activeIndex > 0) {
+                let nextIndex = state.activeIndex - 1;
+                return {
+                    activeIndex: nextIndex,
+                    items: [...state.items],
+                    previousEnabled: (nextIndex != 0),
+                    nextEnabled: (state.items.length) > nextIndex
+                };
+            }
+
+            return {
+                ...state,
+                previousEnabled: state.activeIndex != 0,
+                nextEnabled: state.items.length > state.activeIndex
             };
         default:
             return state;
@@ -23,7 +41,7 @@ const index = (state: stateArg, action = { type: '' }) => {
 };
 
 export const getActiveItem = (state: stateArg) => {
-   return state.items[state.activeIndex];
+    return state.items[state.activeIndex];
 };
 
 export default index;
