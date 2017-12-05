@@ -24,7 +24,9 @@ class App extends React.Component<any, any> {
         Here I will tell a story about a famous man - Vlad drakula. 
         You can go to next part when you click on the arrow. 
         <div>
+          <hr/>
           {activeItem}
+          <hr/>
         </div>
         <input type="button" value="&#x21E8;" onClick={() => onChangeItemClick()} />
       </div>
