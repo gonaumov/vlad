@@ -14,7 +14,7 @@ class App extends React.Component<any, any> {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>Vlad welcome to React</h1>
+          <h1>Vlad welcome to Redux!</h1>
         </div>
         <h2>
         When I use something I like to tell a story with it.
