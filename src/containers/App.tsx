@@ -14,21 +14,32 @@ class App extends React.Component<any, any> {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Vlad welcome to React</h2>
+          <h1>Vlad welcome to React</h1>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        When I start something I like to tell a story with it. 
-        Here I will tell a story about a famous man - Vlad drakula. 
-        You can go to next part when you click on the arrow. 
-        <div>
-          <hr/>
-          {activeItem}
-          <hr/>
+        <h2>
+        When I use something I like to tell a story with it.
+        Here I will tell a story about a famous man - Vlad Dracula.
+        You can go to next part when you click on the arrow.
+        </h2>
+        <div className="App-controls-holder">
+            <input 
+                className="App-controls-previous-button button" 
+                disabled={previousDisabled} 
+                onClick={() => onPreviousClick()} 
+                type="button" 
+                value="&#x21E6;"  
+            />
+            <input 
+                className="App-controls-next-button button" 
+                disabled={nextDisabled} 
+                type="button" 
+                value="&#x21E8;" 
+                onClick={() => onNextClick()} 
+            />
+            <div>
+                {activeItem}
+            </div>
         </div>
-        <input disabled={previousDisabled} type="button" value="&#x21E6;" onClick={() => onPreviousClick()} />
-        <input disabled={nextDisabled} type="button" value="&#x21E8;" onClick={() => onNextClick()} />
       </div>
     );
   }
