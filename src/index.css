@@ -29,6 +29,7 @@ body {
   font-size: 200%;
   font-weight: bold;
   cursor: pointer;
+  z-index: 10;
 }
 
 .button[disabled] {
@@ -67,5 +68,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 400%;
+  font-size: 190%;
+}
+
+@media only screen and (min-width: 700px) {
+  .App-controls-holder div {
+    font-size: 400%;
+  }
 }
