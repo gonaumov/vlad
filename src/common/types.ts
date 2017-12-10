@@ -4,3 +4,20 @@ export interface stateArg {
     previousEnabled: boolean,
     nextEnabled: boolean
 }
+
+export interface appCallbacks {
+    onNextClick(): void,
+    onPreviousClick(): void
+}
+
+export interface displayItems {
+    activeItem: string,
+    previousDisabled: boolean,
+    nextDisabled: boolean
+}
+
+export interface Action {
+    type: string
+}
+
+export type AppProps = displayItems & appCallbacks;

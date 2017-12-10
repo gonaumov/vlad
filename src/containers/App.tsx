@@ -1,13 +1,12 @@
 import * as React from 'react';
 import '../App.css';
-import { Dispatch } from 'redux';
 import { getActiveItem } from '../reducers/';
 import { connect, Component } from 'react-redux';
-import { stateArg } from '../common/types';
+import { stateArg, AppProps, Action } from '../common/types';
 import * as types from '../constants/ActionTypes';
 const logo = require('../vlad.png');
 
-class App extends React.Component<any, any> {
+class App extends React.Component<AppProps, {}> {
   render() {
     const { activeItem, onNextClick, onPreviousClick, nextDisabled, previousDisabled } = this.props;
     return (
@@ -51,7 +50,7 @@ const mapStateToProps = (state: stateArg) => ({
   nextDisabled: !state.nextEnabled
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<any>) => {
+const mapDispatchToProps = (dispatch: (input: Action) => void  ) => {
   return {
     onNextClick: () => {
       dispatch({
@@ -69,4 +68,4 @@ const mapDispatchToProps = (dispatch: Dispatch<any>) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App as Component<any>);
+)(App as Component<AppProps>);
